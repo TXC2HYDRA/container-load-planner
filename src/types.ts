@@ -1,4 +1,4 @@
-/** Box dimensions. Any consistent length unit works; the docs and tests use millimetres. */
+/** Box dimensions. Any consistent length unit works; the examples use millimetres. */
 export interface Dimensions {
   length: number
   width: number
@@ -28,20 +28,21 @@ export interface PlanInput {
 }
 
 export interface PlanResult {
-  /** Items to load: min(geometricCount, payloadCount). */
+  /** Item count: min(geometricCount, payloadCount). A planning figure, not a loading instruction. */
   count: number
   /** Items that fit by geometry alone (uniform grid, best orientation). */
   geometricCount: number
-  /** Items allowed by the payload limit alone. */
+  /** Items allowed by the payload limit alone: floor(maxPayloadKg / weightKg + tolerance). */
   payloadCount: number
   limitedBy: 'geometry' | 'payload' | 'both'
   /** Item dimensions as placed: length along container length, width along width, height along height. */
   orientation: Dimensions
   /** Grid of the best orientation. `grid.along * grid.across * grid.layers` equals geometricCount. */
   grid: { along: number; across: number; layers: number }
-  /** count * item volume / container volume, 0..1. */
+  /** count * item volume / container volume. About 0..1; the floor tolerance can push it slightly above 1. */
   volumeUtilisation: number
-  /** count * item weight / max payload, 0..1. */
+  /** count * item weight / max payload. About 0..1; the floor tolerance can push it slightly above 1. */
   payloadUtilisation: number
+  /** count * item weight. */
   totalWeightKg: number
 }
