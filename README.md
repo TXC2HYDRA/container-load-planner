@@ -9,7 +9,14 @@ that the items physically fit, or numerical precision beyond what IEEE double ar
 
 ## Install and use
 
-Not published to npm. Two ways to use it:
+Not published to npm. Three ways to use it:
+
+- Install from GitHub. The `prepare` script builds `dist/` on install, which downloads the `typescript`
+  dev dependency from the npm registry. Tested with npm 10.9.9 on Node v22.23.3:
+
+  ```bash
+  npm install github:TXC2HYDRA/container-load-planner
+  ```
 
 - Build, then depend on the folder (needs `typescript`, see [Test and build](#test-and-build)):
 
