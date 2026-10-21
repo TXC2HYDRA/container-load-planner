@@ -206,7 +206,8 @@ boundaries, rotations and their order, the payload cap and its boundary, validat
 BigInt reference check on 500 pseudo-random cases, exact-decimal checks of the large-quotient
 tolerance (both sides of each constant), and the numerical-limit and per-axis-ratio cases at extreme
 magnitudes. Run on Node v22.23.3, which runs `.ts`
-files directly. Other Node versions are untested.
+files directly. CI runs the latest Node 22.x. Other Node versions are untested; the built `dist/` is
+ES2022 ES modules and is not tested on any older Node.
 
 ```bash
 npm test          # node --test
@@ -215,6 +216,11 @@ npm test          # node --test
 `npm run build` and `npm run typecheck` use `tsc` (TypeScript 6.0.3 as a dev dependency). Run
 `npm install` (or `npm ci`) first. They check and build `src/` only; the test files are not
 type-checked. Build output goes to `dist/`.
+
+## Contributing and support
+
+Bug reports and pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Security notes are in
+[SECURITY.md](SECURITY.md). Release history is in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
