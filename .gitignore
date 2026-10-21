@@ -1,0 +1,33 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+build/
+*.tsbuildinfo
+
+# environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# coverage
+coverage/
+.nyc_output/
+
+# logs
+*.log
+npm-debug.log*
+
+# databases
+*.sqlite
+*.sqlite3
+*.db
+
+# local artifacts
+.DS_Store
+.idea/
+.vscode/
+*.tmp

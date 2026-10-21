@@ -1,0 +1,24 @@
+{
+  "name": "container-load-planner",
+  "version": "0.1.0",
+  "description": "Uniform-grid container load calculator: how many identical boxes fit, by geometry and payload.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}
