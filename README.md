@@ -217,6 +217,12 @@ npm test          # node --test
 `npm install` (or `npm ci`) first. They check and build `src/` only; the test files are not
 type-checked. Build output goes to `dist/`.
 
+## Origin
+
+This package was extracted from [LineLedger](https://github.com/TXC2HYDRA/lineledger-mcp), a
+factory-floor assistant built for the Amazon Developer Hackathon, and is developed as a separate
+repository. LineLedger uses it through its `plan_container_load` tool. It does not depend on LineLedger.
+
 ## Contributing and support
 
 Bug reports and pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). Security notes are in
